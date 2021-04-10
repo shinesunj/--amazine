@@ -1,0 +1,25 @@
+
+
+
+<view class="container">
+
+
+<d-article 
+        class="article"
+        wx:key="artId" 
+        article-detail="{{item}}" 
+        wx:for="{{articleList}}">
+</d-article>
+
+
+<d-loading hidden="!loading" class="loading"></d-loading>
+<text wx:if="{{noMoreData}}" class="no-more">没有更多了</text>
+
+
+
+
+</view>
+
+
+
+

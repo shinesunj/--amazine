@@ -1,0 +1,25 @@
+<view class="container">
+    <view class="user-container">
+        <view class="user-info">
+            <view class="user-name">{{userInfo.nickName}}</view>
+            <view class="user-avatar">
+                <image wx:if="{{authorized}}" src="{{userInfo.avatarUrl}}" />
+                
+                <d-imgBtn open-type="getUserInfo" bind:getuserinfo="onGetUserInfo">
+                    <image src="/images/mark/login.png" slot="image" />
+                </d-imgBtn>
+            </view>
+            <!-- <open-data type="userNickName" lang="en" class="user-name" />
+           <open-data type="userAvatarUrl" lang="en" class="user-avatar" /> -->
+        </view>
+        <view class="share">
+            <!-- <image src="/images/mark/relay.png" /> -->
+            <!-- <d-imgBtn open-type="getUserInfo"></d-imgBtn> -->
+            <d-imgBtn open-type="share">
+                <image src="/images/mark/relay.png" slot="image" />
+            </d-imgBtn>
+        </view>
+    </view>
+    <d-articleList article-list="{{likeList}}" />
+    <d-imgBtn />
+</view>

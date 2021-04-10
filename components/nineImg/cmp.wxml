@@ -1,0 +1,17 @@
+<view class="container">
+    <view class="img-container">
+        <image 
+        class="image" 
+        wx:for="{{imgArr}}" 
+        wx:key="*this" 
+        catch:tap="onTap" 
+        src="{{item}}"
+        data-index="{{index}}"
+        wx:if="{{index < 9}}" />        
+        <text wx:if="{{imgArr.length > 9}}" class="img-num">{{imgArr.length}}</text>
+    </view>
+    <view class="text-container">
+        <text>{{mainTitle}}发生快乐风科技按道理复联三</text>
+    </view>
+
+</view>

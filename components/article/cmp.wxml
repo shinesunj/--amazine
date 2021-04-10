@@ -1,0 +1,46 @@
+<view class="container">
+    <view class="mark-container">
+        <image class="avatar" src="{{articleDetail.mark.avatar}}" />
+        <text class="text">{{articleDetail.mark.people}}等{{articleDetail.mark.count}}</text>
+    </view>
+    <view>
+        <d-bigImg   wx:if="{{articleDetail.type === 0}}"
+                    img-src="{{articleDetail.imgArray[0]}}"
+                    main-title="{{articleDetail.mainTitle}}">
+         </d-bigImg>
+        <d-nineImg  wx:elif="{{articleDetail.type === 1}}"
+                    img-arr="{{articleDetail.imgArray}}"
+                    main-title="{{articleDetail.mainTitle}}">
+        </d-nineImg>
+        <d-imgText  wx:elif="{{articleDetail.type === 2}}"
+                    main-title="{{articleDetail.mainTitle}}"
+                    sub-head="{{articleDetail.subHead}}"
+                    img-src="{{articleDetail.imgArray[0]}}"></d-imgText>
+        <d-video    wx:elif="{{articleDetail.type === 3}}"
+                    main-title="{{articleDetail.mainTitle}}"
+                    src="{{articleDetail.video.src}}"
+                    duration="{{articleDetail.video.duration}}"
+                    poster="{{articleDetail.video.poster}}"
+                    video-id="{{articleDetail.videoId}}"></d-video>
+        <d-pureText wx:else
+                    main-title="{{articleDetail.mainTitle}}"
+                    sub-head="{{articleDetail.subHead}}"></d-pureText>
+    </view>
+    <view class="control-container"> 
+        <view>
+            <d-tag tag="{{articleDetail.tag}}" tag-id="{{articleDetail.tagId}}"/>
+        </view>
+        <view class="control-box">
+            <d-more tag="{{articleDetail.tag}}"/>
+             <d-imgBtn open-type="share" class="box img-btn">
+                <image src="/images/mark/relay.png" slot="image" />
+            </d-imgBtn>
+            <d-like like="{{likeStatus}}" catch:like="onLike"/>
+        </view>
+    </view>
+</view>
+<!-- 2 图文 -->
+<!-- 1九宫格 -->
+<!-- 3视频 -->
+<!-- 4纯文字 -->
+<!-- 0大图 -->
